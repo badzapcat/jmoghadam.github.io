@@ -41,6 +41,7 @@ configurations = {
 
     # Substitutions for the linker
     'SUBSTITUTIONS': [
+        ('<home-page-link>', PH_PATH),
         # Add substitutions of the form
         # (regex, sub_function),
         # (regex, sub_function, condition),

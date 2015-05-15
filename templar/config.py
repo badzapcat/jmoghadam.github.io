@@ -15,6 +15,10 @@ if os.path.isfile("PH_PATH"):
 
 PH_ASSETS_PATH = os.path.join(PH_PATH, "assets")
 
+quiz_re = re.compile(r"<quiz>(.*?)</quiz>", re.S)
+def quiz_sub(match):
+    return "<b>Pop Quiz!</b>: " + match.group(1)
+
 ##################
 # Configurations #
 ##################
@@ -42,6 +46,7 @@ configurations = {
     # Substitutions for the linker
     'SUBSTITUTIONS': [
         ('<home-page-link>', PH_PATH),
+        (quiz_re, quiz_sub),
         # Add substitutions of the form
         # (regex, sub_function),
         # (regex, sub_function, condition),

@@ -6,6 +6,14 @@ import templar.utils.filters
 
 # Path of the current file -- best not to change this
 FILEPATH = os.path.dirname(os.path.abspath(__file__))
+PH_PATH = "../"
+
+if os.path.isfile("PH_PATH"):
+    with open("PH_PATH", 'r') as f:
+        for line in f:
+            PH_PATH = line.rstrip()
+
+PH_ASSETS_PATH = os.path.join(PH_PATH, "assets")
 
 ##################
 # Configurations #
@@ -21,8 +29,14 @@ configurations = {
 
     # Variables that can be used in templates
     'VARIABLES': {
-        # Add variables here, like the following
-        # 'example': 'something here',
+        'link_open_sans': "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600",
+        'link_common_css': os.path.join(PH_ASSETS_PATH, "css/common.css"),
+        'link_lab_css': os.path.join(PH_ASSETS_PATH, "css/lab.css"),
+        'link_jquery': os.path.join(PH_ASSETS_PATH, "js/jquery-1.11.2.min.js"),
+        'link_script': os.path.join(PH_ASSETS_PATH, "js/script.js"),
+
+        'link_index': os.path.join(PH_PATH, "index.html"),
+
     },
 
     # Substitutions for the linker

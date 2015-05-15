@@ -1,0 +1,58 @@
+table {
+    margin: 20px 0;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    text-align: center;
+    min-width: 80px;
+    padding: 0 10px;
+}
+
+
+/* Calendar */
+.odd {
+    background-color: #DDD;
+}
+.curweek {
+    background-color: rgba(54, 167, 246, 0.4);
+}
+.emph1 {
+    background-color: #EEE;
+}
+.emph2 {
+    background-color: #777;
+    color: white;
+}
+.proj {
+    color: #4CBB17;
+}
+
+
+/* Google Calendars */
+.calendar {
+    text-align: center;
+    margin-top: 20px;
+}
+@media (min-width: 900px) {
+.curweek {
+    background-color: rgba(54, 167, 246, 0.4);
+}
+.curweek {
+    background-color: rgba(54, 167, 246, 0.4);
+}
+    .small-calendar {
+        display: none;
+    }
+}
+@media (max-width: 900px) {
+    .large-calendar {
+        display: none;
+    }
+}

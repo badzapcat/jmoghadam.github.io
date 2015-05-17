@@ -1,19 +1,17 @@
 ~ title: Rain Question
 
-~ option1: Because it's beautiful.
+<block question>
+Do I like rain?
+</block question>
 
-~ option2: Because California is in a drought.
+~ option1: Yes
 
-~ option3: Because it's wet.
+~ option2: No
 
-~ answer1: True
+<block explanation1>
+Correct! I like rain because I find it beautiful.
+</block explanation1>
 
-~ answer2: False
-
-~ answer3: False
-
-~ comment1: Correct! 
-
-~ comment2: That's a good reason to like rain, but I would like it even if this weren't true.
-
-~ comment3: Okay... but that doesn't get at the main reason.
+<block explanation2>
+Incorrect! How could I _possibly_ dislike a part of the world we live in?
+</block explanation2>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iterator Self-Tests</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/common.css"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/lab.css"></script>
+    <script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../assets/js/script.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="slidetitle">Iterator Self-Tests</div>
+        <div class="segment">
+            <div class="text">Consider the following code, intended to be included in the <code>IntSequence</code> class. Note: This code is intentionally gross.</div>
+            <div class="code"><code>private int iteratorIndex = 0;</br>
+            private boolean done = false;</br>
+            public void initIterator() {</br>
+            }</br>
+            public boolean hasNext() {
+                <div class="codeindent">
+                if (done) {
+                    <div class="codeindent">
+                    return false;
+                    </div>
+                }</br>
+                if (iteratorIndex == myCount-1) {
+                    <div class="codeindent">
+                    done = true;
+                    </div>
+                }</br>
+                return true;
+                </div>
+            }</br>
+            public int next() {
+                <div class="codeindent">
+                int rtn = myValues[iteratorIndex];</br>
+                iteratorIndex++;</br>
+                return rtn;
+                </div>
+            }
+            </code></div>
+            <div class="text">Suppose also that the IntSequence main method begins as follows.</div>
+            <div class="code"><code>public static void main (String[] args) {
+                <div class="codeindent">
+                IntSequence seq = new IntSequence (1);</br>
+                seq.add (5);</br>
+                _______ ;
+                </div>
+            }
+            </code></div>
+            <div class="text">This self-test involves identifying the program segments that, when substituted for the blank line in the main method, perform correctly. (Note that "correct" behavior may involve a crash.)</div>
+            <div class="code"><code>seq.initIterator();</br>
+            boolean b;</br>
+            int n;</br>
+            b = seq.hasNext();</br>
+            b = seq.hasNext();
+            </code></div>
+            <div class="text">Performs correctly?</div>
+            <div class="self-test">
+                <table class="question">
+                    <tr>
+                        <td><input type="radio" name="q0"></td>
+                        <td><div class="text">Yes</div></td>
+                        <td>
+                            <div class="text">
+                                Incorrect. Examine <code>hasNext</code> more carefully.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="q0"></td>
+                        <td><div class="text">No</div></td>
+                        <td>
+                            <div class="text">
+                                Correct! <code>hasNext</code> changes the state, as it shouldn't.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="testbutton checkbutton">Check Solution</div>
+            </div></br>
+            <div class="code"><code>seq.initIterator();</br>
+            if (seq.hasNext()) {
+                <div class="codeindent">
+                System.out.println (seq.next());
+                </div>
+            }</br>
+            if (seq.hasNext()) {
+                <div class="codeindent">
+                System.out.println (seq.next());
+                </div>
+            }</code></div>
+            <div class="text">Works correctly?</div>
+            <div class="self-test">
+                <table class="question">
+                    <tr>
+                        <td><input type="radio" name="q1"></td>
+                        <td><div class="text">Yes</div></td>
+                        <td>
+                            <div class="text">
+                                Correct! Only the first <code>if</code> statement evaluates to true, as it should.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="q1"></td>
+                        <td><div class="text">No</div></td>
+                        <td>
+                            <div class="text">
+                                Incorrect.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="testbutton checkbutton">Check Solution</div>
+            </div></br>
+            <div class="code"><code>seq.initIterator();</br>
+            System.out.println (seq.next());</br>
+            System.out.println (seq.next());</code></div>
+            <div class="text">Works correctly?</div>
+            <div class="self-test">
+                <table class="question">
+                    <tr>
+                        <td><input type="radio" name="q2"></td>
+                        <td><div class="text">Yes</div></td>
+                        <td>
+                            <div class="text">
+                                Correct! It crashes, as it should.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="q2"></td>
+                        <td><div class="text">No</div></td>
+                        <td>
+                            <div class="text">
+                                Incorrect.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="testbutton checkbutton">Check Solution</div>
+            </div></br>
+            <div class="code"><code>seq.initIterator();</br>
+            if (seq.hasNext()) {
+                <div class="codeindent">
+                System.out.println (seq.next());
+                </div>
+            }</br>
+            seq.initIterator();</br>
+            if (seq.hasNext()) {
+                <div class="codeindent">
+                System.out.println (seq.next());
+                </div>
+            }</code></div>
+            <div class="text">Works correctly?</div>
+            <div class="self-test">
+                <table class="question">
+                    <tr>
+                        <td><input type="radio" name="q3"></td>
+                        <td><div class="text">Yes</div></td>
+                        <td>
+                            <div class="text">
+                                Incorrect. Does <code>initIterator</code> really reset the iteration, as it should?
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="q3"></td>
+                        <td><div class="text">No</div></td>
+                        <td>
+                            <div class="text">
+                                Correct! Notice <code>initIterator</code> does not reset the value of <code>done</code>.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="testbutton checkbutton">Check Solution</div>
+            </div></br>
+            <div class="code"><code>seq.initIterator();</br>
+            boolean b;</br>
+            int n;</br>
+            n = seq.next();</br>
+            b = seq.hasNext();</code></div>
+            <div class="text">Works correctly?</div>
+            <div class="self-test">
+                <table class="question">
+                    <tr>
+                        <td><input type="radio" name="q4"></td>
+                        <td><div class="text">Yes</div></td>
+                        <td>
+                            <div class="text">
+                                Incorrect. Trace through the calls to <code>next</code> and <code>hasNext</code> more carefully.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="q4"></td>
+                        <td><div class="text">No</div></td>
+                        <td>
+                            <div class="text">
+                                Correct! <code>hasNext</code> will return true when it shouldn't.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="testbutton checkbutton">Check Solution</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

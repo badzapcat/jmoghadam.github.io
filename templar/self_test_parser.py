@@ -32,4 +32,4 @@ def create_self_test_html(html_text):
         item = item.replace('{{ explanation }}', explanation)
         item_soup = BeautifulSoup(item)
         quiz_soup.div.table.contents.append(item_soup.tr)
-    return quiz_soup.prettify()
+    return quiz_soup.html.div.prettify()

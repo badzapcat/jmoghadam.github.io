@@ -1,25 +1,37 @@
 $(document).ready(function(){
-    
-    $('.photo1').hover(function() {
-        $(this).hide();
-        $(this).parent().find('.photo2').show();
-    });
-    
-    $('.photo2').hover(function() {
-    }, function() {
-        $(this).hide();
-        $(this).parent().find('.photo1').show();
+
+    /* Self-Test Radio Buttons */
+    $('.checkbutton').click(function() {
+        var choices = $(this).parent().children('.question').children('tbody').children('tr');
+        for (var i = 0; i < choices.length; i++) {
+            var input = $(choices[i]);
+            var selected = $(input).children('td').children()[0].checked;
+            var feedback = $(input).children('td')[2];
+            $(feedback).hide();
+            if (selected) {
+                $(feedback).show();
+            }
+        }
     });
 
-    var navbarTop = $('#navbar').offset().top
-    $(document).scroll(function() {
-        var windowTop = $(window).scrollTop();
-        var diff = navbarTop - windowTop;
-        var isTop = $('#navbar').hasClass('navbar-top');
-        if (diff < 0 && !isTop) {
-            $('#navbar').removeClass('navbar-middle').addClass('navbar-top');
-        } else if (diff >= 0 && isTop) {
-            $('#navbar').removeClass('navbar-top').addClass('navbar-middle');
+    /* Self-Test Checkbox Buttons */
+    $('.checkboxbutton').click(function() {
+        var choices = $(this).parent().children('.question').children('tbody').children('tr');
+        for (var i = 0; i < choices.length; i++) {
+            var input = $(choices[i]);
+            var feedback = $(input).children('td')[2];
+            $(feedback).show();
+        }
+    });
+
+    /* Toggle Solution */
+    $('.togglebutton').click(function() {
+        var sol = $(this).parent().find('.solution');
+        var display = $(sol).css('display');
+        if (display == 'none') {
+            $(sol).show();
+        } else {
+            $(sol).hide();
         }
     });
 

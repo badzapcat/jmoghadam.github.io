@@ -3,7 +3,5 @@
 Let's test out how well you know me.
 
 <quiz>
-
-Why do I like rain?
-
+rain_question
 </quiz>

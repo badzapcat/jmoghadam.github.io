@@ -13,30 +13,32 @@
 <body>
     <main class="content">
         <header class="title">{{ title }}</header>
-        {{ :question }}
-        <div class="self-test">
-            <table class="question">
-                <tr>
-                    <td><input type="radio" name="q0"></td>
-                    <td><div class="text">{{ option1 }}</div></td>
-                    <td>
-                        <div class="text">
-                            {{ :explanation1 }}
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="radio" name="q0"></td>
-                    <td><div class="text">{{ option2 }}</div></td>
-                    <td>
-                        <div class="text">
-                            {{ :explanation2 }}
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <div class="testbutton checkbutton">Check Solution</div>
-        </div></br>
+        <div class="segment">
+            {{ :question }}
+            <div class="self-test">
+                <table class="question">
+                    <tr>
+                        <td><input type="radio" name="q0"></td>
+                        <td><div class="text">{{ option1 }}</div></td>
+                        <td>
+                            <div class="text">
+                                {{ :explanation1 }}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="q0"></td>
+                        <td><div class="text">{{ option2 }}</div></td>
+                        <td>
+                            <div class="text">
+                                {{ :explanation2 }}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="testbutton checkbutton">Check Solution</div>
+            </div>
+        </div>
     </main>
 </body>
 </html>

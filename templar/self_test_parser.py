@@ -1,4 +1,3 @@
-from html.parser import HTMLParser
 from bs4 import BeautifulSoup
 
 OPTION_DELIMITER = ' ||| '
@@ -20,6 +19,11 @@ ITEM_TEMPLATE =  """<tr>
                     </tr>"""
 
 def create_self_test_html(html_text):
+    '''
+    Takes a series of bullet points in html and turns them into a table of 
+    multiple choice questions. The multiple choice question format is 
+    courtesy of Sarah Kim.
+    '''
     quiz_soup = BeautifulSoup(QUIZ_TEMPLATE)
     input_soup = BeautifulSoup(html_text)
     bullet_points = input_soup.ul.find_all('li', recursive=False)

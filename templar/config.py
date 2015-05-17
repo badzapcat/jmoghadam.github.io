@@ -4,6 +4,8 @@ import re
 import templar.utils.html
 import templar.utils.filters
 
+from self_test_parser import create_self_test_html
+
 # Path of the current file -- best not to change this
 FILEPATH = os.path.dirname(os.path.abspath(__file__))
 PH_PATH = "../"
@@ -15,9 +17,14 @@ if os.path.isfile("PH_PATH"):
 
 PH_ASSETS_PATH = os.path.join(PH_PATH, "assets")
 
-quiz_re = re.compile(r"<quiz>(.*?)</quiz>", re.S)
-def quiz_sub(match):
-    return "<b>Pop Quiz!</b>: " + match.group(1)
+self_test_re = re.compile(r"<self_test>(.*?)</self_test>", re.S)
+def self_test_sub(match):
+    '''
+    '''
+    self_test_html = match.group(1).strip()
+    return create_self_test_html(self_test_html)
+    
+
 
 ##################
 # Configurations #
@@ -46,7 +53,7 @@ configurations = {
     # Substitutions for the linker
     'SUBSTITUTIONS': [
         ('<home-page-link>', PH_PATH),
-        (quiz_re, quiz_sub),
+        (self_test_re, self_test_sub),
         # Add substitutions of the form
         # (regex, sub_function),
         # (regex, sub_function, condition),

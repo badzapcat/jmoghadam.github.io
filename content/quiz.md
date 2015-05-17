@@ -1,7 +1,14 @@
 ~ title: Pop Quiz!
 
-Let's test out how well you know me.
+Here is a lab.
+I'm teaching you about rain.
+Now there's a question:
+__Do I like rain?__
 
-<quiz>
-rain_question
-</quiz>
+<self_test>
+
+- Yes! ||| That is the __correct__ answer!
+- No. ||| That is _totally_ wrong.
+- Um. ||| Maybe.
+
+</self_test>

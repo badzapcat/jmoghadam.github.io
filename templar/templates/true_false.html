@@ -10,16 +10,17 @@
     <script src="{{ link_jquery }}" type="text/javascript"></script>
     <script src="{{ link_script }}" type="text/javascript"></script>
 </head>
+
+
+
 <body>
     <div class="content">
-        <header class="title">{{ title }}</header>
         <div class="segment">
-            {{ :question }}
             <div class="self-test">
                 <table class="question">
                     <tr>
                         <td><input type="radio" name="q0"></td>
-                        <td><div class="text">{{ option1 }}</div></td>
+                        <td><div class="text">{{ :option1 }}</div></td>
                         <td>
                             <div class="text">
                                 {{ :explanation1 }}
@@ -28,7 +29,7 @@
                     </tr>
                     <tr>
                         <td><input type="radio" name="q0"></td>
-                        <td><div class="text">{{ option2 }}</div></td>
+                        <td><div class="text">{{ :option2 }}</div></td>
                         <td>
                             <div class="text">
                                 {{ :explanation2 }}

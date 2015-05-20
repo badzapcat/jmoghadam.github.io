@@ -11,12 +11,3 @@
 - "You should speak casually, but you should never think casually." -- Stephen Boyd
 
 - "If you love someone, you probably like them." -- Dan Klein
-
-```java
-public class HelloWorld {
-
-	public static void main(String[] args){
-		System.out.println("Hello world!");
-	}
-}
-```

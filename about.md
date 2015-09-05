@@ -4,8 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Hello!
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+My name's Joseph, though some people call me Joey.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+I'm interested in language and education. My hobbies include reading, writing, arts-and-crafts, walking, hiking, running, and flipping coins. I love people, but I can be shy -- this conflict has been the source of much of the distress of my life.
+
+I recently graduated from the Unviersity of California, Berkeley. Last summer, I taught a class there: CS 61BL, the second course for along the CS major track at Berkeley. You can check out our course website [here](http://cs61bl.github.io) (it's a wonderful class!).

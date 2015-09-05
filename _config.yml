@@ -1,13 +1,34 @@
-# Site settings
-title: Side Character
+title: "Side Character"
 description: > # this means to ignore newlines until "baseurl:"
   A website written by Joseph Moghadam (that's me)!
-  Do I really have the gall to dedicate something to myself?
-  Sometimes people accuse me of not saying a lot about myself.
-  Now people who are curious about me may read something.
-baseurl: "" # the subpath of your site, e.g. /blog/
+  Do I really have the gall to dedicate something to myself...?
+  I'm not one of the main characters.
+baseurl: "" # The subpath of your site. Use "" if you're hosting a blog at the root level.
 url: "http://jmoghadam.github.io" # the base hostname & protocol for your site
-github_username: jmoghadam
+github_username: "jmoghadam"
 
-# Build settings
-markdown: kramdown
+# This is used by feed.xml. Uncomment if you want to use it.
+# description: "..."
+
+gems:
+  - jemoji
+exclude:
+  - "README.md"
+  - "CHANGELOG.md"
+  - "CNAME"
+  - "Gemfile"
+  - "Gemfile.lock"
+permalink: :title
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

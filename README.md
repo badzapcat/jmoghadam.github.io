@@ -1,3 +1,3 @@
 # jmoghadam.github.io
 
-This is website is purely a technical experiment at the moment, since I know absolutely nothing about creating a website. As such, anything here should be taken as meaningless for the time being. Maybe one day it will become something cool.
+A personal website that is more of a technical experiment than anything, since I know absolutely nothing about web development.

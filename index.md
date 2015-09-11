@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Welcome to Side Character!
+title: Welcome!
 permalink: /
 ---
 
